@@ -404,7 +404,7 @@ function Landing() {
   const seg = segmentos.find((s) => s.id === ativo) ?? segmentos[0]!;
 
   return (
-    <div className="lp-root min-h-screen bg-[#f6f9f7]">
+    <div className="lp-root lp-v3 min-h-screen bg-[#f6f9f7]">
       <header className="sticky top-0 z-20 border-b border-border/70 bg-background/85 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-4 sm:px-8">
           <div className="flex min-w-0 items-center gap-2.5">
@@ -468,7 +468,7 @@ function Landing() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden bg-[#0a1610] text-white">
+      <section className="lp-v3-hero relative overflow-hidden bg-[#0a1610] text-white">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 lp-grid-dark [mask-image:radial-gradient(ellipse_75%_65%_at_50%_0%,black,transparent)]"
@@ -477,8 +477,8 @@ function Landing() {
           aria-hidden
           className="pointer-events-none absolute inset-x-0 top-0 h-[540px] lp-glow-hero lp-aurora"
         />
-        <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-16 text-center sm:px-8 sm:pb-20 sm:pt-24">
-          <span className="lp-fade inline-flex items-center gap-2 rounded-full border border-mint/30 bg-mint/10 px-3.5 py-1.5 text-xs font-semibold text-mint">
+        <div className="lp-v3-hero-layout relative mx-auto max-w-6xl px-5 pb-16 pt-16 text-center sm:px-8 sm:pb-20 sm:pt-24">
+          <span className="lp-v3-announcement lp-fade inline-flex items-center gap-2 rounded-full border border-mint/30 bg-mint/10 px-3.5 py-1.5 text-xs font-semibold text-mint">
             <Sparkles className="size-3.5" /> Agora com IA no caixa e integração com iFood
           </span>
           <h1 className="lp-lead mx-auto mt-7 max-w-4xl text-balance font-display text-4xl font-extrabold leading-[1.04] tracking-[-0.035em] min-[400px]:text-5xl sm:text-6xl lg:text-7xl">
@@ -490,7 +490,7 @@ function Landing() {
             ordens de serviço, locação, delivery, financeiro e nota fiscal. Cada empresa usa só o
             que precisa.
           </p>
-          <div className="lp-support lp-d2 mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="lp-v3-actions lp-support lp-d2 mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
               asChild
               size="lg"
@@ -503,10 +503,10 @@ function Landing() {
             </Button>
             <WhatsButton dark className="w-full sm:w-auto" />
           </div>
-          <p className="lp-fade lp-d3 mt-6 text-xs text-white/55">
+          <p className="lp-v3-assurance lp-fade lp-d3 mt-6 text-xs text-white/55">
             Sem taxa por nota emitida • Sem limite de produtos • Funciona no celular
           </p>
-          <div className="lp-mock lp-d4 relative mx-auto mt-14 max-w-4xl sm:mt-16">
+          <div className="lp-v3-product lp-mock lp-d4 relative mx-auto mt-14 max-w-4xl sm:mt-16">
             <div aria-hidden className="pointer-events-none absolute -inset-8 lp-glow lp-aurora" />
             <div className="relative rounded-2xl border border-white/10 bg-white/5 p-2 shadow-raised backdrop-blur-sm">
               <div aria-hidden className="flex items-center gap-1.5 px-3 pb-2 pt-1.5">
@@ -530,8 +530,8 @@ function Landing() {
               Escolha o seu ramo e veja o que o sistema faz por você.
             </p>
           </div>
-          <div className="mt-10 grid gap-8 lg:grid-cols-[300px_1fr] lg:gap-10">
-            <div className="flex snap-x gap-3 overflow-x-auto pb-2 lg:snap-none lg:flex-col lg:overflow-visible lg:pb-0">
+          <div className="lp-v3-segments mt-10 grid gap-8 lg:gap-10">
+            <div className="lp-v3-segment-tabs flex snap-x gap-3 overflow-x-auto pb-2 lg:snap-none lg:overflow-visible lg:pb-0">
               {segmentos.map((s) => (
                 <button
                   key={s.id}
@@ -577,7 +577,7 @@ function Landing() {
             </div>
             <div
               key={seg.id}
-              className="lp-swap panel grid content-start gap-8 rounded-3xl p-6 sm:p-10 md:grid-cols-[1.1fr_1fr] md:gap-10"
+              className="lp-v3-segment-panel lp-swap panel grid content-start gap-8 rounded-3xl p-6 sm:p-10 md:grid-cols-[1.1fr_1fr] md:gap-10"
             >
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-strong">
@@ -619,7 +619,7 @@ function Landing() {
           <h2 className="max-w-2xl text-balance font-display text-3xl font-extrabold tracking-[-0.025em] sm:text-5xl">
             Recursos que fazem diferença
           </h2>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="lp-v3-feature-grid mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {destaques.map((f) => (
               <SpotCard
                 key={f.title}
@@ -670,7 +670,7 @@ function Landing() {
               {NOME_DO_PLANO.loja} e {NOME_DO_PLANO.rede}.
             </p>
           </div>
-          <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-3">
+          <div className="lp-v3-prices mt-12 grid items-stretch gap-5 lg:grid-cols-3">
             {planos.map((p) =>
               p.destaque ? (
                 <div key={p.nome} className="lp-beam relative rounded-3xl p-[1.5px] shadow-raised">
